@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.savelifehome">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestCenter"></activity>
+        <activity android:name=".redesign"></activity>
+        <activity android:name=".Report" />
+        <activity android:name=".Contactinfo" />
+        <activity android:name=".SelfCheck" />
+        <activity android:name=".volunteer" />
+        <activity android:name=".Login" />
+        <activity android:name=".TestCenter" />
         <activity android:name=".MainScreen" />
         <activity android:name=".Signup" />
         <activity android:name=".MainActivity">
