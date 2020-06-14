@@ -11,13 +11,13 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/Resources"
-        android:name="com.example.savelifehome.Resources"
-        android:label="fragment_resources"
-        tools:layout="@layout/fragment_resources" />
-    <fragment
         android:id="@+id/Profile"
         android:name="com.example.savelifehome.Profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/resources"
+        android:name="com.example.savelifehome.Resources"
+        android:label="activity_redesign"
+        tools:layout="@layout/activity_redesign" />
 </navigation>

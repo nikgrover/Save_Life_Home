@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "432280125094",
+    "firebase_url": "https://savelive-3a1f6.firebaseio.com",
+    "project_id": "savelive-3a1f6",
+    "storage_bucket": "savelive-3a1f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432280125094:android:a5cf03ba37e85a670d3e67",
+        "android_client_info": {
+          "package_name": "com.example.savelifehome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432280125094-0rn2q865sr4uvqkg0nij4k4t30cgih8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKMDKWN_C9kplvUz5osLb82hqotht9x_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432280125094-0rn2q865sr4uvqkg0nij4k4t30cgih8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
