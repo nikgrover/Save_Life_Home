@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
@@ -58,27 +57,41 @@ public class Home extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        //Inflate the layout for this fragment
-        Button toTest = (Button) view.findViewById(R.id.TestCenter);
-        toTest.setOnClickListener(new View.OnClickListener() {
+        final View.OnClickListener mListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), TestCenter.class);
-                startActivity(intent);
+                switch (view.getId()) {
+                    case R.id.TestCenter:
+                        Intent intent = new Intent(getActivity(), TestCenter.class);
+                        startActivity(intent);
+                    case R.id.Report:
+                        intent = new Intent(getActivity(), Report.class);
+                        startActivity(intent);
+               /* case R.id.Volunteer:
+                    intent = new Intent(getActivity(), Volunteer.class);
+                    startActivity(intent);
+                case R.id.News:
+                     intent = new Intent(getActivity(),News.class);
+                    startActivity(intent);
+                case R.id.Request:
+                     intent = new Intent(getActivity(),RequestServices.class);
+                    startActivity(intent);
+                case R.id.Contact:
+                     intent = new Intent(getActivity(),ContactTrace.class);
+                    startActivity(intent);
+*/
+                    default:
+                        break;
+                }
+
 
             }
-        });
-        return view;
-    }
-}
+
+
+        };
+
                                            /* final Button b1 = view.findViewById(R.id.TestCenter);
                                              final Button b2 = view.findViewById(R.id.Request);
                                              final Button b3 = view.findViewById(R.id.Volunteer);
@@ -94,42 +107,34 @@ public class Home extends Fragment {
                                             b6.setOnClickListener((View.OnClickListener) this);
                                         */
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
 
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        view.findViewById(R.id.TestCenter).setOnClickListener(mListener);
+        view.findViewById(R.id.Volunteer).setOnClickListener(mListener);
+        view.findViewById(R.id.News).setOnClickListener(mListener);
+        view.findViewById(R.id.Contact).setOnClickListener(mListener);
+        view.findViewById(R.id.Request).setOnClickListener(mListener);
+        view.findViewById(R.id.Report).setOnClickListener(mListener);
 
 
+        //Inflate the layout for this fragment
+        //  Button toTest = (Button) view.findViewById(R.id.TestCenter);
+        // toTest.setOnClickListener(new View.OnClickListener() {
+        //   @Override
+        //public void onClick(View view) {
+        //Intent intent = new Intent(getActivity(), TestCenter.class);
+        // startActivity(intent);
 
-       /* final View.OnClickListener mListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId())
-                {
-                    case R.id.TestCenter:
-                        Intent intent = new Intent(getActivity(),TestCenter.class);
-                        startActivity(intent);
-                    case R.id.Report:
-                        intent = new Intent(getActivity(),Report.class);
-                        startActivity(intent);
-               /* case R.id.Volunteer:
-                    intent = new Intent(getActivity(), Volunteer.class);
-                    startActivity(intent);
-                case R.id.News:
-                     intent = new Intent(getActivity(),News.class);
-                    startActivity(intent);
-                case R.id.Request:
-                     intent = new Intent(getActivity(),RequestServices.class);
-                    startActivity(intent);
-                case R.id.Contact:
-                     intent = new Intent(getActivity(),ContactTrace.class);
-                    startActivity(intent);
+        //}
+        //});
 
-                }
-
-
-            }
-        };
         return view;
+    }
 
 
-}}
-*/
+}
+
