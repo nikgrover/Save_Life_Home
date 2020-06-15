@@ -49,16 +49,6 @@ public class Home extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-    }
-
         final View.OnClickListener mListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,9 +56,11 @@ public class Home extends Fragment {
                     case R.id.TestCenter:
                         Intent intent = new Intent(getActivity(), TestCenter.class);
                         startActivity(intent);
+                        break;
                     case R.id.Report:
                         intent = new Intent(getActivity(), Report.class);
                         startActivity(intent);
+                        break;
                /* case R.id.Volunteer:
                     intent = new Intent(getActivity(), Volunteer.class);
                     startActivity(intent);
@@ -82,8 +74,6 @@ public class Home extends Fragment {
                      intent = new Intent(getActivity(),ContactTrace.class);
                     startActivity(intent);
 */
-                    default:
-                        break;
                 }
 
 
@@ -92,20 +82,24 @@ public class Home extends Fragment {
 
         };
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+
+
+        }
+
+    }
+
                                            /* final Button b1 = view.findViewById(R.id.TestCenter);
                                              final Button b2 = view.findViewById(R.id.Request);
                                              final Button b3 = view.findViewById(R.id.Volunteer);
                                              final Button b4 = view.findViewById(R.id.News);
                                              final Button b5 = view.findViewById(R.id.Contact);
-                                             final Button b6 = view.findViewById(R.id.Report);
-
-                                            b1.setOnClickListener((View.OnClickListener) this);
-                                            b2.setOnClickListener((View.OnClickListener) this);
-                                            b3.setOnClickListener((View.OnClickListener) this);
-                                            b4.setOnClickListener((View.OnClickListener) this);
-                                            b5.setOnClickListener((View.OnClickListener) this);
-                                            b6.setOnClickListener((View.OnClickListener) this);
-                                        */
+                                             final Button b6 = view.findViewById(R.id.Report);*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

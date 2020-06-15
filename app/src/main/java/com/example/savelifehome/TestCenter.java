@@ -20,8 +20,9 @@ public class TestCenter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_center);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recyclerView = (RecyclerView) findViewById(R.id.recycle_view);
-        recyclerView.setHasFixedSize(true);
+     
 
         s1 = getResources().getStringArray(R.array.hospitals);
         s2 = getResources().getStringArray(R.array.address);
