@@ -18,6 +18,6 @@
     <fragment
         android:id="@+id/resources"
         android:name="com.example.savelifehome.Resources"
-        android:label="activity_redesign"
+        android:label="fragment_resources"
         tools:layout="@layout/activity_redesign" />
 </navigation>
