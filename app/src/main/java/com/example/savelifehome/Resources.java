@@ -1,5 +1,6 @@
 package com.example.savelifehome;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,44 +46,55 @@ public class Resources extends Fragment {
         return fragment;
     }
 
+    final View.OnClickListener mListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.mhealth:
+                    Intent intent = new Intent(getActivity(), Mental_health.class);
+                    startActivity(intent);
+                    break;
+                case R.id.precaution:
+                    intent = new Intent(getActivity(), Precaution.class);
+                    startActivity(intent);
+                    break;
+                case R.id.usick:
+                    intent = new Intent(getActivity(), Ifgetsick.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
 //
     }
 
-//    class MyAdapter extends ArrayAdapter<String>
-//    {
-//        Context context;
-//        String rTitle[];
-//        int rImage[];
 //
-//        MyAdapter(Context c,String title[],int img[])
-//        {
-//            super(c,R.layout.listview_layout,R.id.title, title);
-//            this.context =c;
-//            this.rTitle =title;
-//            this.rImage = img;
-//        }
-//
-//        @NonNull
-//        @Override
-//        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//           // LayoutInflater layoutInflater = getA
-//            return super.getView(position, convertView, parent);
-//        }
-//    }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resources, container, false);
+
+
+        View view = inflater.inflate(R.layout.fragment_resources, container, false);
+        view.findViewById(R.id.precaution).setOnClickListener(mListener);
+        view.findViewById(R.id.mhealth).setOnClickListener(mListener);
+        view.findViewById(R.id.aboutcorona).setOnClickListener(mListener);
+        view.findViewById(R.id.usick).setOnClickListener(mListener);
+
+
+        return view;
     }
 //
 

@@ -13,12 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Report" />
+        <activity
+            android:name=".Ifgetsick"
+            android:parentActivityName=".MainScreen"></activity>
+        <activity
+            android:name=".Precaution"
+            android:parentActivityName=".MainScreen" />
+        <activity
+            android:name=".Mental_health"
+            android:parentActivityName=".MainScreen" />
+        <activity
+            android:name=".Report"
+            android:parentActivityName=".MainScreen" />
         <activity android:name=".Contactinfo" />
-        <activity android:name=".SelfCheck" />
-        <activity android:name=".volunteer" />
+        <activity
+            android:name=".SelfCheck"
+            android:parentActivityName=".TestCenter" />
+        <activity
+            android:name=".volunteer"
+            android:parentActivityName=".MainScreen" />
         <activity android:name=".Login" />
-        <activity android:name=".TestCenter" />
+        <activity
+            android:name=".TestCenter"
+            android:parentActivityName=".MainScreen" />
         <activity android:name=".MainScreen" />
         <activity android:name=".Signup" />
         <activity android:name=".MainActivity">
